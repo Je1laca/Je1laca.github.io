@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Big Brew</title>
+  <title>Student Registration - Big Brew</title>
 
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
 
@@ -10,27 +10,78 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+    }
+
+    .registration-page {
+      background: indianred;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: #ffffff;
+      padding: 25px;
+      width: 360px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: pink;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #93c5fd;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 11px;
+      background-color: pink;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: red;
+    }
+
+  .webpage {
+      display: none;
       background-color: indianred;
       padding: 20px;
       min-height: 100vh;
       color: white;
     }
 
-    h1 {
+    .webpage h1 {
       color: pink;
-      text-align: center;
     }
 
-    h3 {
-      text-align: center;
-    }
-
-    h2 {
-      color: pink;
-      margin-top: 30px;
-    }
-
-    img {
+    .webpage img {
       width: 250px;
       border-radius: 10px;
       margin-top: 15px;
@@ -39,44 +90,78 @@
     a {
       color: yellow;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 8px 0;
-    }
   </style>
+
+  <script>
+    function showWebpage(event) {
+      event.preventDefault(); // prevent reload
+      document.querySelector(".registration-page").style.display = "none";
+      document.querySelector(".webpage").style.display = "block";
+    }
+  </script>
 </head>
 
 <body>
 
-  <h1>Big Brew</h1>
-  <h3>Satisfying • Tasty • Affordable</h3>
 
-  <p>Welcome to Big Brew! We serve delicious snacks and drinks perfect for students.</p>
+  <div class="registration-page">
+    <div class="form-box">
+      <h2>Student Registration</h2>
 
-  <img src="https://www.facebook.com/share/p/17VZmEzxTK/?mibextid=wwXIfr" alt="Milktea">
+      <form onsubmit="showWebpage(event)">
+        <label>Name:</label>
+        <input type="text" required>
 
-  <h2>Famous Drinks Prices</h2>
-  <ul>
-    <li>Blackpink Milktea – ₱66</li>
-    <li>Super Choco – ₱49</li>
-    <li>Boss Brew – ₱66</li>
-  </ul>
+        <label>Gender:</label>
+        <input type="radio" name="gender" required> Male
+        <input type="radio" name="gender"> Female
 
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:genghiskhan.ang@gmail.com">genghiskhan.ang@gmail.com</a></p>
-  <p>Address: #1 Don Basilio Bautista Street</p>
+        <label>Grade Level:</label>
+        <select required>
+          <option value="">-- Select Grade --</option>
+          <option>Grade 7</option>
+          <option>Grade 8</option>
+          <option>Grade 9</option>
+          <option>Grade 10</option>
+          <option>Grade 11</option>
+          <option>Grade 12</option>
+        </select>
 
-  <p>
-    If you want more information and menu,
-    <a href="https://www.facebook.com/share/1H8CKyLupS/?mibextid=wwXIfr" target="_blank">
-      Visit our Facebook
-    </a>
-  </p>
+        <label>Comments:</label>
+        <textarea></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="webpage">
+    <h1>Big Brew</h1>
+    <h3>Satisfying • Tasty • Affordable</h3>
+
+    <p>Welcome to Big Brew! We serve delicious snacks and drinks perfect for students.</p>
+
+    
+    <img src="https://www.facebook.com/share/p/17VZmEzxTK/?mibextid=wwXIfr" alt="Milktea">
+
+    <h2>Famous Drinks Prices</h2>
+    <ul>
+      <li>Blackpink Milktea – ₱66</li>
+      <li>Super Choco – ₱49</li>
+      <li>Boss Brew – ₱66</li>
+    </ul>
+
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:genghiskhan.ang@gmail.com">genghiskhan.ang@gmail.com</a></p>
+    <p>Address: #1 Don Basilio Bautista Street</p>
+
+    <p>
+      If you want more information and menu,
+      <a href="https://www.facebook.com/share/1H8CKyLupS/?mibextid=wwXIfr" target="_blank">
+        Visit our Facebook
+      </a>
+    </p>
+  </div>
 
 </body>
 </html>
